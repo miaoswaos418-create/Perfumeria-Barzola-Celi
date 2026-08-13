@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Equipo - Celi & Barzola{% endblock %}
+
+{% block content %}
+<section style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+    <h1 style="color: #004D40; border-bottom: 2px solid #00A896; padding-bottom: 10px;">Equipo de Desarrollo</h1>
+    <br>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 250px; border: 1px solid #eee; padding: 20px; text-align: center; border-radius: 8px;">
+            <i class="fas fa-user-circle" style="font-size: 50px; color: #004D40;"></i>
+            <h3 style="margin-top: 10px;">Integrante 1</h3>
+            <p style="color: #00A896; font-weight: bold;">Desarrollador Front-End & UI</p>
+            <p>Encargado Maquetación HTML5, maquetación del layout en CSS Grid/Flexbox y scripts e interacciones dinámicas en JS.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px; border: 1px solid #eee; padding: 20px; text-align: center; border-radius: 8px;">
+            <i class="fas fa-user-circle" style="font-size: 50px; color: #004D40;"></i>
+            <h3 style="margin-top: 10px;">Integrante 2</h3>
+            <p style="color: #00A896; font-weight: bold;">Desarrollador Back-End Django</p>
+            <p>Configuración de rutas de servidor, administración de vistas dinámicas y arquitectura de static files en el proyecto.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

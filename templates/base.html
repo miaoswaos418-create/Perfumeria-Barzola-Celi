@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Celi & Barzola{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <a href="{% url 'inicio' %}">
+                    <img src="{% static 'Imagenes_Perfumeria/logo.png' %}" alt="Celi & Barzola" class="logo-img">
+                </a>
+            </div>
+            <div class="user-icons">
+                <a href="{% url 'inicio' %}"><i class="fas fa-home"></i></a>
+                <a href="{% url 'servicios' %}"><i class="fas fa-concierge-bell"></i></a>
+                <a href="{% url 'logros' %}"><i class="fas fa-trophy"></i></a>
+                <a href="{% url 'personal' %}"><i class="fas fa-users"></i></a>
+            </div>
+        </div>
+        <nav class="nav-categories">
+            <ul>
+                <li><a href="{% url 'inicio' %}">INICIO</a></li>
+                <li><a href="{% url 'servicios' %}">SERVICIOS</a></li>
+                <li><a href="{% url 'logros' %}">LOGROS</a></li>
+                <li><a href="{% url 'personal' %}">PERSONAL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

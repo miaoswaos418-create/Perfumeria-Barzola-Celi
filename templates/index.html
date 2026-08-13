@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celi & Barzola - Alta Perfumería</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Carga correcta del archivo CSS en Django -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+    <!-- ENCABEZADO Y BARRA DE NAVEGACIÓN -->
+    <header>
+        <div class="top-bar">
+            <!-- Logo desde carpeta Imagenes_Perfumeria -->
+            <div class="logo">
+                <a href="#">
+                    <img src="{% static 'Imagenes_Perfumeria/Logo.jpg' %}" alt="Celi & Barzola" class="logo-img">
+                </a>
+            </div>
+            
+            <!-- Buscador centrado -->
+            <form id="searchForm" class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar perfume, marca, aromas...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+            <!-- Iconos de usuario y carrito -->
+            <div class="user-icons">
+                <a href="#"><i class="fas fa-store"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-basket"></i></a>
+            </div>
+        </div>
+
+        <!-- Menú de Categorías -->
+        <nav class="nav-categories">
+            <ul>
+                <li><a href="#" class="active">PERFUMES</a></li>
+                <li><a href="#">MAQUILLAJE</a></li>
+                <li><a href="#">CUIDADO FACIAL</a></li>
+                <li><a href="#">CUIDADO CAPILAR</a></li>
+                <li><a href="#">CUIDADO CORPORAL</a></li>
+                <li><a href="#">HOMBRES</a></li>
+                <li><a href="#">DERMO COSMÉTICA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. SLIDER / CARRUSEL PRINCIPAL (BANNERS) -->
+    <section class="hero-slider">
+        <div class="slide active">
+           <img src="{% static 'Imagenes_Perfumeria/Banner1.jpg' %}" alt="Perfumes Elegantes">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Descubre tu Aroma Firma</h2>
+                <p>Fragancias exclusivas que definen tu personalidad</p>
+                <a href="#mas-vendidos" class="btn-compra">Explorar Catálogo</a>
+            </div>
+        </div>
+        
+        <div class="slide">
+          <img src="{% static 'Imagenes_Perfumeria/Banner2.jpg' %}" alt="Perfumes Elegantes">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Colección de Lujo</h2>
+                <p>Marcas internacionales al mejor precio</p>
+                <a href="#mas-vendidos" class="btn-compra">Ver Ofertas</a>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="{% static 'Imagenes_Perfumeria/Banner3.jpg' %}" alt="Perfumes Elegantes">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Fragancias Refrescantes</h2>
+                <p>Aromas únicos con la mayor concentración</p>
+                <a href="#mas-vendidos" class="btn-compra">Comprar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SECCIÓN DE PRODUCTOS POR CATEGORÍA -->
+    <section id="mas-vendidos" class="mas-vendidos-container">
+        <div class="productos-carrusel-wrapper">
+            <button class="arrow-btn left-arrow"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="productos-track-container">
+                <div class="productos-track">
+                    
+                    <!-- PÁGINA 1: SECCIÓN PARA HOMBRES -->
+                    <div class="productos-page">
+                        <div class="section-title-overlay">Sección para Hombres</div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume1.jpg' %}" alt="Dior Sauvage">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">DIOR</span>
+                                <h4 class="nombre">SAUVAGE EDT / EDP</h4>
+                                <p class="descripcion-corta">Frescura cruda y nobleza maderada intensa.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$157,32</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume2.jpg' %}" alt="Bleu de Chanel">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">CHANEL</span>
+                                <h4 class="nombre">BLEU DE CHANEL</h4>
+                                <p class="descripcion-corta">Elegancia atemporal capturada en un aroma cautivador.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$159,25</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume3.jpg' %}" alt="Spicebomb All Black">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">VIKTOR & ROLF</span>
+                                <h4 class="nombre">SPICEBOMB ALL BLACK</h4>
+                                <p class="descripcion-corta">Una explosión de especias sensuales y magnéticas.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$133,48</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 2: SECCIÓN PARA MUJERES -->
+                    <div class="productos-page">
+                        <div class="section-title-overlay">Sección para Mujeres</div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume4.jpg' %}" alt="Miss Dior">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">DIOR</span>
+                                <h4 class="nombre">MISS DIOR BLOOMING BOUQUET</h4>
+                                <p class="descripcion-corta">Un tierno abrazo floral de rosas y peonías frescas.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$185,00</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume1.jpg' %}" alt="Chanel No 5">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">CHANEL</span>
+                                <h4 class="nombre">CHANEL N°5 EAU DE PARFUM</h4>
+                                <p class="descripcion-corta">El mito de la feminidad absoluta y sofisticada.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$210,00</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume6.jpg' %}" alt="The Only One">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">DOLCE & GABBANA</span>
+                                <h4 class="nombre">THE ONLY ONE EDP</h4>
+                                <p class="descripcion-corta">Café hipnótico combinado con violetas vibrantes.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$145,50</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PÁGINA 3: SECCIÓN MIXTA -->
+                    <div class="productos-page">
+                        <div class="section-title-overlay">Sección Mixta</div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume7.jpg' %}" alt="Soleil Neige">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">TOM FORD</span>
+                                <h4 class="nombre">SOLEIL NEIGE EDP</h4>
+                                <p class="descripcion-corta">Un viaje luminoso que evoca la luz del sol sobre la nieve.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$152,00</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume8.jpg' %}" alt="Taormina Orange">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">TOM FORD</span>
+                                <h4 class="nombre">TAORMINA ORANGE</h4>
+                                <p class="descripcion-corta">Cítricos frescos del mediterráneo con matices herbales.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$128,00</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="{% static 'Imagenes_Perfumeria/perfume9.jpg' %}" alt="Costa Azzurra">
+                            </div>
+                            <div class="product-info">
+                                <span class="marca">TOM FORD</span>
+                                <h4 class="nombre">COSTA AZZURRA EDP</h4>
+                                <p class="descripcion-corta">Aires marinos entrelazados con maderas de la costa.</p>
+                                <div class="precio-fila">
+                                    <span class="precio">$162,00</span>
+                                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="arrow-btn right-arrow"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="carrusel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TERCERA SECCIÓN: VIDEO PROMOCIONAL DEBAJO -->
+    <section class="seccion-video-promo">
+        <div class="video-container-wrapper">
+            <div class="video-texto-header">
+                <h2>Descubre la Experiencia Celi & Barzola</h2>
+                <p>Siente la elegancia, exclusividad y el arte detrás de nuestras fragancias.</p>
+            </div>
+            
+            <div class="video-player-box">
+                <video controls poster="{% static 'Video_Promocional/poster-video.png' %}" preload="metadata">
+                    <source src="{% static 'Video_Promocional/final_promo.mp4' %}" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video HTML5.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENTANA EMERGENTE (MODAL) PARA DETALLES DE PRODUCTO -->
+    <div id="perfumeModal" class="modal-container">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body-layout">
+                <div class="modal-img-wrapper">
+                    <img id="modalImg" src="" alt="Perfume">
+                </div>
+                <div class="modal-info-wrapper">
+                    <span id="modalMarca" class="marca"></span>
+                    <h2 id="modalNombre"></h2>
+                    <p id="modalPrecio" class="precio"></p>
+                    <hr>
+                    <h3>Descripción del Aroma:</h3>
+                    <p id="modalDescripcion"></p>
+                    <button id="modalAddToCart" class="btn-compra" style="background: #004D40; width: 100%; border: none; margin-top: 20px; cursor: pointer;">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
